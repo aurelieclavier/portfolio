@@ -1,0 +1,23 @@
+    <main>
+        <section class="present">
+            <h2 id="presentation"><?=$presentation['titre']; ?></h2>
+            <?=$presentation['contenu']; ?>
+        </section> 
+        <section>
+            <h2 id="competences">Compétences</h2>
+            <?php for ($i=0; $i < sizeof($category); $i++): ?>
+                <div class="<?=$category[$i]['class_name']; ?>">
+                    <h3>
+                        <?=$category[$i]['titre']; ?>
+                    </h3>
+                    <div class="icone">
+                        <?php for ($j=0; $j < sizeof($competence) ; $j++) { 
+                            if ($category[$i]['id'] === $competence[$j]['id_categorie']) {  
+                               echo $competence[$j]['icone'];
+                            }
+                        }?>
+                    </div>
+                </div>     
+            <?php endfor; ?>
+        </section>
+    </main>

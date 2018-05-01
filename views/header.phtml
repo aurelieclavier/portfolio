@@ -1,0 +1,23 @@
+<body>
+    <header>
+        <div class="fade"></div>
+        <div class="twinkling"></div>   
+        <section class="star-wars">
+            <div class="crawl">
+                <div class="title">
+                    <p><?=$header['titre']; ?></p>                   
+                    <h1><?=$header['sous_titre']; ?></h1>
+                </div>
+                    <?=$header['contenu']; ?>
+                </div>
+        </section>
+    </header>
+    <nav>
+        <div>
+            <?php foreach($nav as $menu): ?>
+                <a href="<?=$menu['lien']; ?>" class="js-scrollTo">
+                    <?=$menu['libelle']; ?>
+                </a>            
+            <?php endforeach; ?>	
+        </div>
+    </nav>

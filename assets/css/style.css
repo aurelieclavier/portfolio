@@ -1,0 +1,477 @@
+/*
+ ██████╗ ██╗      ██████╗ ██████╗  █████╗ ██╗     
+██╔════╝ ██║     ██╔═══██╗██╔══██╗██╔══██╗██║     
+██║  ███╗██║     ██║   ██║██████╔╝███████║██║     
+██║   ██║██║     ██║   ██║██╔══██╗██╔══██║██║     
+╚██████╔╝███████╗╚██████╔╝██████╔╝██║  ██║███████╗
+ ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝*/
+html {
+    font-size: 62.5%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Pathway Gothic One',sans-serif;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+a{
+    text-decoration: none;
+    color: #feda4a;
+}
+img{
+    width: 100%;
+}
+header{
+   background: #000 url(../img/stars.png) repeat top center;
+    max-height: calc(100vh - 60px);
+}
+h2{
+    font-size: 4rem;
+}
+h2 {
+    padding: 2rem 0;
+    color: #feda4a;
+}
+h3{   
+    color: #feda4a;
+    font-size: 2.5rem;
+    border-bottom: 1px solid black;
+    width: 80%;
+    margin: 0 auto;
+}
+/*
+███████╗ ██████╗ ███╗   ██╗████████╗   ███████╗ █████╗  ██████╗███████╗
+██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝   ██╔════╝██╔══██╗██╔════╝██╔════╝
+█████╗  ██║   ██║██╔██╗ ██║   ██║█████╗█████╗  ███████║██║     █████╗  
+██╔══╝  ██║   ██║██║╚██╗██║   ██║╚════╝██╔══╝  ██╔══██║██║     ██╔══╝  
+██║     ╚██████╔╝██║ ╚████║   ██║      ██║     ██║  ██║╚██████╗███████╗
+╚═╝      ╚═════╝ ╚═╝  ╚═══╝   ╚═╝      ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝*/
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?8pq1w');
+    src: url('../fonts/icomoon.eot?#iefix8pq1w') format('embedded-opentype'), url('../fonts/icomoon.woff?8pq1w') format('woff'), url('../fonts/icomoon.ttf?8pq1w') format('truetype'), url('../fonts/icomoon.svg?8pq1w#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*
+ █████╗ ███╗   ██╗██╗███╗   ███╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗    
+██╔══██╗████╗  ██║██║████╗ ████║██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║    
+███████║██╔██╗ ██║██║██╔████╔██║███████║   ██║   ██║██║   ██║██╔██╗ ██║    
+██╔══██║██║╚██╗██║██║██║╚██╔╝██║██╔══██║   ██║   ██║██║   ██║██║╚██╗██║    
+██║  ██║██║ ╚████║██║██║ ╚═╝ ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║    
+╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝    
+                                                                           
+███████╗████████╗ █████╗ ██████╗     ██╗    ██╗ █████╗ ██████╗ ███████╗    
+██╔════╝╚══██╔══╝██╔══██╗██╔══██╗    ██║    ██║██╔══██╗██╔══██╗██╔════╝    
+███████╗   ██║   ███████║██████╔╝    ██║ █╗ ██║███████║██████╔╝███████╗    
+╚════██║   ██║   ██╔══██║██╔══██╗    ██║███╗██║██╔══██║██╔══██╗╚════██║    
+███████║   ██║   ██║  ██║██║  ██║    ╚███╔███╔╝██║  ██║██║  ██║███████║    
+╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝     ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝*/
+.twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.twinkling {
+    background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+    z-index: 1;
+    -moz-animation: move-twink-back 200s linear infinite;
+    -ms-animation: move-twink-back 200s linear infinite;
+    -o-animation: move-twink-back 200s linear infinite;
+    -webkit-animation: move-twink-back 200s linear infinite;
+    animation: move-twink-back 200s linear infinite;
+}
+.fade {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    top: -25px;
+    background-image: linear-gradient(0deg, transparent, black 90%);
+    z-index: 1;
+}
+.star-wars {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    height: 800px;
+    color: #feda4a;
+    font-size: 500%;
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 150%;
+    perspective: 160px;
+    text-align: justify;
+    z-index: 2;
+    overflow: hidden;
+    width: 100%;
+}
+.crawl {
+    position: relative;
+    transform-origin: 10% 10%;
+    -moz-transform-origin: 10% 10%;
+    -ms-transform-origin: 10% 10%;
+    -o-transform-origin: 10% 10%;
+    -webkit-transform-origin: 10% 10%;
+    animation: crawl 100s linear;
+    -webkit-animation: crawl 100s linear;
+    -moz-animation: crawl 100s linear;
+    -o-animation: crawl 100s linear;
+    animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+.crawl>.title {
+    font-size: 90%;
+    text-align: center;
+}
+
+.crawl>.title h1 {
+    margin: 0 0 150px;
+    text-transform: uppercase;
+}
+.crawl p:nth-child(3){
+    margin: 8% 0;
+}
+/*
+██╗  ██╗███████╗██╗   ██╗     ███████╗██████╗  █████╗ ███╗   ███╗███████╗
+██║ ██╔╝██╔════╝╚██╗ ██╔╝     ██╔════╝██╔══██╗██╔══██╗████╗ ████║██╔════╝
+█████╔╝ █████╗   ╚████╔╝█████╗█████╗  ██████╔╝███████║██╔████╔██║█████╗  
+██╔═██╗ ██╔══╝    ╚██╔╝ ╚════╝██╔══╝  ██╔══██╗██╔══██║██║╚██╔╝██║██╔══╝  
+██║  ██╗███████╗   ██║        ██║     ██║  ██║██║  ██║██║ ╚═╝ ██║███████╗
+╚═╝  ╚═╝╚══════╝   ╚═╝        ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝*/
+@keyframes crawl {
+    0% {
+        top: 500px;
+        transform:rotateX(20deg) translateZ(0);
+        -webkit-transform:rotateX(20deg) translateZ(0);
+        -moz-transform:rotateX(20deg) translateZ(0);
+        -ms-transform:rotateX(20deg) translateZ(0);
+        -o-transform:rotateX(20deg) translateZ(0);
+}
+    100% {
+        top: -6000px;
+        transform: rotateX(25deg) translateZ(-3000px);
+        -webkit-transform: rotateX(25deg) translateZ(-3000px);
+        -moz-transform: rotateX(25deg) translateZ(-3000px);
+        -ms-transform: rotateX(25deg) translateZ(-3000px);
+        -o-transform: rotateX(25deg) translateZ(-3000px);
+}
+}
+@keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-webkit-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-moz-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-ms-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+/*
+███╗   ██╗ █████╗ ██╗   ██╗
+████╗  ██║██╔══██╗██║   ██║
+██╔██╗ ██║███████║██║   ██║
+██║╚██╗██║██╔══██║╚██╗ ██╔╝
+██║ ╚████║██║  ██║ ╚████╔╝ 
+╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝*/
+nav {
+    position: relative;
+    z-index: 3;
+    background-color: #242424;
+    height: 40px;
+    padding: 10px 0;
+}
+nav div {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+nav a {
+    color: white;
+    font-size: 2.5rem;
+    transition: 0.5s;
+}
+nav a:hover {
+    color: #feda4a;
+}
+.fixed-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/*
+███╗   ███╗ █████╗ ██╗███╗   ██╗
+████╗ ████║██╔══██╗██║████╗  ██║
+██╔████╔██║███████║██║██╔██╗ ██║
+██║╚██╔╝██║██╔══██║██║██║╚██╗██║
+██║ ╚═╝ ██║██║  ██║██║██║ ╚████║
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝*/
+main {
+    background-color: gray;
+    position: relative;
+    z-index: 2;
+}
+main section{
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+main section div{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.present{
+    padding: 2rem 0;
+    margin: 0 auto;
+}
+.present > p {
+    line-height: 3.5rem;
+    font-size: 2rem;
+    text-align: justify;
+    width: 60%;
+    margin: 0 auto;
+}
+h2{
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    -moz-transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    -webkit-transition-duration: 0.8s;
+}
+#presentation:before,#presentation:after {
+    font-family: 'icomoon';
+    content: "\e901";
+    padding: 0 5%;
+    color: #242424;
+}
+#competences:before, #competences:after {
+    content: "\e900";
+    font-family: 'icomoon';
+    padding: 0 2%;
+    color: #242424;
+}
+.language,
+.cms,
+.outils{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+section:nth-child(2) div > i{
+    font-size: 120px;
+    display: inline-block;
+    padding: 3% 0;
+}
+section:nth-child(2) div>i:hover, div img:hover{
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transition-duration: 2s;
+    -moz-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    -webkit-transition-duration: 2s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+}
+section img{
+    width: 120px;
+    padding: 3% 0;
+    height: 120px;
+}
+.icone{
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 0;
+}
+/*
+███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗ 
+██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
+█████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
+██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
+██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
+╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝*/
+footer {
+    background-color: rgb(36, 36, 36);
+    position: relative;
+    z-index: 2;
+    padding: 3% 0 ;
+}
+.contact{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+#contact:before,#contact:after{
+   content: "\e902";
+   font-family: 'icomoon';
+   padding: 0 2%;
+   color: white;
+}
+footer form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+.email{
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 0 10px 0;
+}
+.message:focus, .email:focus{
+    background-color: #242424;
+    color: #feda4a;
+}
+.message{
+    border-radius: 5px;
+    margin: 0 0 10px 0;
+    padding: 10px 0 0 10px;
+}
+button {
+    padding: 10px;
+    border-radius: 7px;
+    color: #feda4a;
+    background-color: #242424;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: 0.8s;
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -ms-transition: 0.8s;
+    -o-transition: 0.8s;
+}
+button:hover{
+    color: #242424;
+    background-color: #feda4a;
+    border: 1px solid black;
+}
+.scroll-to-top{
+    background-color: #242424;
+    padding: 3% 0;
+}
+.scroll-to-top img{
+    width: 120px;
+    position: relative;
+    z-index: 5;
+    animation:bounce .35s ease infinite alternate;
+    -webkit-animation:bounce .35s ease infinite alternate;
+    -moz-animation: bounce .35s ease infinite alternate;
+    -o-animation: bounce .35s ease infinite alternate;
+}
+@-webkit-keyframes bounce {
+    from {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
+        -ms-transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -o-transform: translateY(-10px);
+}
+}
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+}
+    to {
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -o-transform: translateY(-10px);
+}
+}
+/*
+███╗   ███╗███████╗██████╗ ██╗ █████╗      ██████╗ ██╗   ██╗███████╗██████╗ ██╗███████╗███████╗
+████╗ ████║██╔════╝██╔══██╗██║██╔══██╗    ██╔═══██╗██║   ██║██╔════╝██╔══██╗██║██╔════╝██╔════╝
+██╔████╔██║█████╗  ██║  ██║██║███████║    ██║   ██║██║   ██║█████╗  ██████╔╝██║█████╗  ███████╗
+██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══██║    ██║▄▄ ██║██║   ██║██╔══╝  ██╔══██╗██║██╔══╝  ╚════██║
+██║ ╚═╝ ██║███████╗██████╔╝██║██║  ██║    ╚██████╔╝╚██████╔╝███████╗██║  ██║██║███████╗███████║
+╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝     ╚══▀▀═╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝*/
+@media screen and (max-width: 1100px) {
+    nav{
+        height: auto;
+    }
+    nav div{
+        display: flex;
+        flex-direction: column;
+    }
+    .fixed-header{
+        position: relative;
+    }
+    .present > p{
+        text-align: left;
+    }
+    .icone{
+        display: flex;
+        justify-content: space-around;
+        padding: 2% 5%;
+    }
+}
+@media screen and (max-width: 850px) {
+    .icone{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto;
+        padding: 5% 0;
+    }
+    section img{
+        margin: 0 auto;
+        padding: 2% 0;
+    }
+}
+
+
